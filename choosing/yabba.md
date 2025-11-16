@@ -24,7 +24,7 @@ video accompanid bye..
 === My Panel
 Name  | Value | Cows
 ---   | ---   | 
-Make my shit bigggerr|![](static/node804a.jpg)| ANDTHEN i was liie blablah blahblah
+Make my shit bigggerr|![](static/node804.jpg)| ANDTHEN i was liie blablah blahblah
 Item 2| Green |
 ===
 1. Main Item
