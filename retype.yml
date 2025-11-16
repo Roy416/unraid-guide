@@ -1,0 +1,19 @@
+input: .
+output: .retype
+
+url: docs.example.com # Use your website address here
+
+start:
+  # Uncomment the next line to try Retype Pro features
+  # pro: true
+
+branding:
+  title: Unraid Guide
+  label: 
+
+links:
+
+footer:
+  copyright: "Made with love by MrTing"
+
+url: unraidguide.github.io/unraide-guide/
