@@ -1,4 +1,4 @@
-# 🙌Guide's Purpose
+# 🙌 Guide's Purpose
 
 If this is your first time building a home lab it can be quite overwhelming, especially after the tedious task of picking out the hardware. So in the spirit of Unraid having an active community, I've created this guide!
 
