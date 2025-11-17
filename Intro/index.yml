@@ -1,2 +1,4 @@
-icon: ""
+icon: book
 expanded: true
+label: Intro
+order: 1000
