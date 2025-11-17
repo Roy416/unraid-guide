@@ -10,32 +10,32 @@
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>&#128588; Guide&#39;s Purpose</title>
-    <meta name="title" content="🙌 Guide's Purpose">
-    <meta name="description" content="If this is your first time building a home lab it can be quite overwhelming, especially after the tedious task of picking out the hardware.">
+    <title>&#128290; Different Methods</title>
+    <meta name="title" content="🔢 Different Methods">
+    <meta name="description" content="In this section, we will be setting up the network that will allow you to access your apps outside of your home.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://unraidguide.github.io/unraide-guide/">
+    <link rel="canonical" href="https://unraidguide.github.io/unraide-guide/remote-server-access/different-methods/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unraidguide.github.io/unraide-guide/">
-    <meta property="og:title" content="🙌 Guide's Purpose">
-    <meta property="og:description" content="If this is your first time building a home lab it can be quite overwhelming, especially after the tedious task of picking out the hardware.">
+    <meta property="og:url" content="https://unraidguide.github.io/unraide-guide/remote-server-access/different-methods/">
+    <meta property="og:title" content="🔢 Different Methods">
+    <meta property="og:description" content="In this section, we will be setting up the network that will allow you to access your apps outside of your home.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://unraidguide.github.io/unraide-guide/">
-    <meta property="twitter:title" content="🙌 Guide's Purpose">
-    <meta property="twitter:description" content="If this is your first time building a home lab it can be quite overwhelming, especially after the tedious task of picking out the hardware.">
+    <meta property="twitter:url" content="https://unraidguide.github.io/unraide-guide/remote-server-access/different-methods/">
+    <meta property="twitter:title" content="🔢 Different Methods">
+    <meta property="twitter:description" content="In this section, we will be setting up the network that will allow you to access your apps outside of your home.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="resources/css/retype.css?v=3.11.0.816664195830" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.816664195830" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.11.0.816664195830" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.11.0.816664195830" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.816664195830" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.816664195830" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -50,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="" class="flex items-center leading-snug text-xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Unraid Guide For Noobs</span>
                         </a>
                     </div>
@@ -150,22 +150,52 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="-guides-purpose" class="break-words">
+<doc-anchor-target id="-different-methods" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-guides-purpose">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F64C;</span> Guide&#x27;s Purpose</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-different-methods">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F522;</span> Different Methods</span>
     </h1>
 </doc-anchor-target>
-<p>If this is your first time building a home lab it can be quite overwhelming, especially after the tedious task of picking out the hardware. So in the spirit of Unraid having an active community, I&#x27;ve created this guide!</p>
-<p>This includes guides for the typical services people want. Which include:</p>
-<ul>
-<li>a media server (Plex)</li>
-<li>being able to sync and share files (Nextcloud),</li>
-<li>backing up photos from your phone (Immich),</li>
-<li>how to access these outside of your house, and</li>
-<li>how to back up your stuff.</li>
-</ul>
-<p>There are written instructions with accompanying videos and even pictures for the longer setups. So no matter how how you like your guides, you&#x27;re covered.</p>
+<p>In this section, we will be setting up the network that will allow you to access your apps outside of your home. If you don’t plan on needing remote access, you can skip to the Apps &amp; Plugins section.</p>
+<p>There are 3 ways to connect your server remotely; <strong>VPN</strong>, <strong>Port Forward</strong>, and <strong>Cloudflare Tunnel</strong>. I&#x27;ll be explaining each of these. There is a TLDR chart at the bottom.</p>
+<doc-anchor-target id="-vpn">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vpn">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F578;&#xFE0F;</span> VPN</span>
+    </h2>
+</doc-anchor-target>
+<p>VPN stands for Virtual Private Network and they&#x27;re awesome. You may have seen ads for VPNs, this uses the same technology but for a slightly different purpose. You can think of it as having your own private tunnel, where nobody else can see the data that goes through it nor can they hack into it, and it&#x27;s free!</p>
+<p>VPNs have all the positives except for one. Which is if you want your friends to access an app on the server, they must also have the VPN client downloaded and connected to your network. It would also require some tinkering so your friends only have access to the app and not your entire server.</p>
+<doc-anchor-target id="-port-forward">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-port-forward">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x23E9;</span> Port Forward</span>
+    </h2>
+</doc-anchor-target>
+<p>With this method, your friends can easily access your apps. To achieve this, it does come with some compromise to your security. With this, you&#x27;re <em>opening a port</em> so your friends can connect to it, but so can the hackers that are scanning for open ports.</p>
+<p>Whether this is safe or not depends on the security of the app you&#x27;re running behind that port. So if the app is popular and is constantly getting updates, then the chances of you getting compromised is low but technically always exists.</p>
+<p>In order to connect to your apps remotely, you would need to purchase a domain which go for $10-$30 per year. We will also be using Cloudflare for protection, however that invites an upload restriction of 100mb. I found this to be a problem when long videos on my phone were trying to be backed up.</p>
+<doc-anchor-target id="-cloudflare-tunnel">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-cloudflare-tunnel">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F687;</span> Cloudflare Tunnel</span>
+    </h2>
+</doc-anchor-target>
+<p>Cloudflare Tunnels has been touted to be the best method as it&#x27;s setup quick, secure, and your friends can easily access it. However it has one big caveat. Which is, it is <strong>not meant to be used for large data transfers</strong>. This includes no media streaming, no transferring of files, etc. So it&#x27;s best served for static websites (e.g. Overseer, recipe viewing website, idk).</p>
+<p>Some people still debate on what Cloudflare’s TOS applies to or if there is a way to go around it.  Technically you’re still able to do it, but it’s up to you if you want to take the chance of getting banned.</p>
+<p>Another downside is, since you are using Cloudflare&#x27;s Tunnel, <strong>any data that you send or receive is being seen by Cloudflare</strong>. Whether this is concerning or not depends on you. Cloudflare&#x27;s bread and butter is providing security, so you would think them seeing your data is alright. But if you&#x27;re really sensitive to privacy then this is a no go.</p>
+<p>And like the Port Forwarding method, you would need to purchase a domain and there would be the same upload restriction.</p>
+<doc-anchor-target id="-sowhat-do-i-use">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-sowhat-do-i-use">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F937;</span> So..what do I use?</span>
+    </h2>
+</doc-anchor-target>
+<p>Ideally you would want most of the apps you want to use remotely under a VPN, as it&#x27;s really secure and has no data restrictions.</p>
+<p>If you want to share Plex/Jellyfin/Google Drive alternative with your friends you can use the port forwarding method. For Plex only (due to its magic), you simply have to open its port and can avoid doing this.</p>
+<p>Then for any static websites that you want to share (e.g. Overseerr), you can use Cloudflare Tunnels.</p>
+<table><thead><tr><th width="127">Methods</th><th>🟢 Pros</th><th>🔴 Cons</th></tr></thead><tbody><tr><td>VPN</td><td><ul><li><mark style="color:green;">Free</mark></li><li><mark style="color:green;">Very secure &#x26; private</mark> </li><li><mark style="color:green;">Easy to set up</mark></li><li><mark style="color:green;">No download or upload restrictions</mark></li></ul></td><td><ul><li><mark style="color:red;">Friends must be connected to VPN to access services</mark></li></ul></td></tr><tr><td>Port Forward</td><td><ul><li><mark style="color:green;">Friends can easily access services</mark></li><li><mark style="color:green;">Private</mark> </li><li><mark style="color:green;">No download restrictions</mark></li></ul><p></p></td><td><ul><li><mark style="color:red;">Security Concern</mark></li><li><mark style="color:red;">Annual Cost ($10-$30/yr)</mark></li><li><mark style="color:red;">100mb Upload Restriction</mark></li><li><mark style="color:red;">Longest to setup and sometimes fickle</mark></li></ul></td></tr><tr><td>Cloudflare Tunnel</td><td><ul><li><mark style="color:green;">Friends can easily access services</mark></li><li><mark style="color:green;">Secure</mark></li><li><mark style="color:green;">Easy to Setup</mark></li></ul><p></p></td><td><ul><li><mark style="color:red;">Meant for static sites (no streaming, downloading)</mark></li><li><mark style="color:red;">Cloudflare sees all data sent and received</mark></li><li><mark style="color:red;">Annual Cost ($10-$30/yr)</mark></li><li><mark style="color:red;">100mb Upload Restriction</mark></li></ul></td></tr></tbody></table>
+<p>\</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -175,13 +205,20 @@
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../intro/choosing-hardware/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Choosing Hardware?</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="intro/why-unraid/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../remote-server-access/vpn/what-is-a-vpn/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Why Unraid?</span>
+                                                <span class="block mt-1">What is a VPN?</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -225,6 +262,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Guide's Purpose", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Different Methods", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
