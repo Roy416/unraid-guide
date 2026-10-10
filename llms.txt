@@ -1,0 +1,119 @@
+﻿# Unraid Guide for Noobs Made by a Noob
+
+> If this is your first time building a home lab it can be quite overwhelming, especially after the tedious task of picking out the hardware. So in the spirit of Unraid having an active community, I've created this guide!
+
+- [Unraid Guide for Noobs Made by a Noob](https://unraidguide.github.io/unraid-guide/readme.md): Unraid Guide for Noobs Made by a Noob
+
+## Intro
+
+- [Why Unraid?](https://unraidguide.github.io/unraid-guide/intro/why-unraid.md): It does cost money for x amount of drives. unlike its counter part.
+- [Common Unraid Terms](https://unraidguide.github.io/unraid-guide/intro/common-unraid-terms.md): An array is where your hard drives live. You can think of it of as linking all your drives together creating one gigantic storage space. But unlike traditional RAID, you're still able to go into each hard drive and see what files are on there.
+- [Choosing Hardware?](https://unraidguide.github.io/unraid-guide/intro/choosing-hardware.md): If I was to build a server again, I'd only be only slightly less confused on how to go about it than I was the first time. Here are some of the stuff I remember.
+
+## Installing Unraid
+
+- [Unraid USB Creator](https://unraidguide.github.io/unraid-guide/installing-unraid/unraid-usb-creator.md): Accompanying video by Elevated Systems
+- [Booting into Unraid](https://unraidguide.github.io/unraid-guide/installing-unraid/booting-into-unraid.md): Accompanying video by Elevated Systems
+- [First Time Setup](https://unraidguide.github.io/unraid-guide/installing-unraid/first-time-setup.md): Open a web browser and enter the IPv4 address you noted earlier. You can also access it by entering servername.local, however this is less reliable.
+- [Further Tinkering](https://unraidguide.github.io/unraid-guide/installing-unraid/further-tinkering.md): By default, when you turn on your sever, the array does not start automatically.
+
+## Shares
+
+- [Creating Shares](https://unraidguide.github.io/unraid-guide/shares/creating-shares.md): Accompanying video by TechnGo
+- [Share Permissions](https://unraidguide.github.io/unraid-guide/shares/share-permissions.md): Accompanying video by TechnGo
+- [Mapping Shares](https://unraidguide.github.io/unraid-guide/shares/mapping-shares.md): Accompanying video by TechnGo
+- [Mover](https://unraidguide.github.io/unraid-guide/shares/mover.md): One of the perks of having a cache drive is that you can set it up so that when you download or transfer files to your server, it will use the faster SSD speeds.
+
+## Apps & Plugins
+
+- [Understanding Docker](https://unraidguide.github.io/unraid-guide/appsplugins/understanding-docker.md): Docker is a platform that allows you to run apps. These apps are isolated in their own “containers” or environment, so they don’t interfere with each
+- [App Tips](https://unraidguide.github.io/unraid-guide/appsplugins/app-tips.md): When you install an app, you will see all these addresses under port mappings in the docker. You might be confused on which port to use to access the local Web UI.
+- [Plugins](https://unraidguide.github.io/unraid-guide/appsplugins/plugins.md): Unlike apps which are installed in their own containers, plugins are installed directly into Unraid. Which can potentially be problematic, causing some plugins to break after a major Unraid update.
+- [Custom Docker Network](https://unraidguide.github.io/unraid-guide/appsplugins/custom-docker-network.md): Accompanying video by IBRACORP
+
+## Remote Server Access
+
+- [Different Methods](https://unraidguide.github.io/unraid-guide/remote-server-access/different-methods.md): In this section, we will be setting up the network that will allow you to access your apps outside of your home. If you don’t plan on needing remote access, you can skip to the Apps & Plugins section.
+
+### VPN
+
+- [What is a VPN?](https://unraidguide.github.io/unraid-guide/remote-server-access/vpn/what-is-a-vpn.md): As mentioned before, in this context a VPN is essentially your own private tunnel that is secure. You may have heard the terms Wireguard or Tailscale when discussing about VPNs.
+- [Installation](https://unraidguide.github.io/unraid-guide/remote-server-access/vpn/installation.md): ●
+- [Subnet (Optional)](https://unraidguide.github.io/unraid-guide/remote-server-access/vpn/subnet.md): If you log into Unraid with your Tailscale IP and click on the Web UI of a container, you'll notice that IP address reverts back to the local one. It's working now because you're at home, but once you're outside, it won't.
+- [Giving Access](https://unraidguide.github.io/unraid-guide/remote-server-access/vpn/giving-access.md): Currently you can access all your services from the devices that are on your Tailscale network. If you were to give someone access to your network, that means they will also have access to all of your services and server files.
+
+### Port Forwarding
+
+- [What Is Port Forwarding](https://unraidguide.github.io/unraid-guide/remote-server-access/port-forwarding/what-is-port-forwarding.md): When you port forward something, you’re opening a port, aka creating an access point. This access point allows you to access your services when you’re away from home.
+- [Purchasing a Domain & Cloudflare](https://unraidguide.github.io/unraid-guide/remote-server-access/port-forwarding/cloudflare.md): After looking at several domain registrars, I chose to buy a domain from Namecheap. You can buy it from another registrar but make sure it comes with whois protection.
+- [Initial Setup](https://unraidguide.github.io/unraid-guide/remote-server-access/port-forwarding/intial-installation.md): Accompanying video by IBRACORP
+- [DDNS & Extra Security](https://unraidguide.github.io/unraid-guide/remote-server-access/port-forwarding/extra-security-ddns.md): You know the public IP address we used in the last section? Well, it has a habit of changing. It could change in a day, in a week, or in a month, making you unable to connect to your apps remotely.
+- [Reverse Proxy](https://unraidguide.github.io/unraid-guide/remote-server-access/port-forwarding/reverse-proxy.md): Reverse proxy looks like an intimidating term, but what this basically does is links your URLs (e.g., nextcloud.domain.com) to your apps so that you can access them outside of your home.
+- [Giving Access](https://unraidguide.github.io/unraid-guide/remote-server-access/port-forwarding/giving-access.md): ●
+
+### Cloudflare Tunnel
+
+- [Purchasing a Domain & Cloudflare](https://unraidguide.github.io/unraid-guide/remote-server-access/cloudflare-tunnel/purchasing-domain-cloudflare.md): After looking at several domain registrars, I chose to buy a domain from Namecheap. You can buy it from another registrar but make sure it comes with
+- [Initial Installation](https://unraidguide.github.io/unraid-guide/remote-server-access/cloudflare-tunnel/initial-installation.md): Cloudflare is constantly changing their website, so in the future the names of things or button placements will change, but the same stuff needs to be done nonetheless.
+- [Creating a Tunnel](https://unraidguide.github.io/unraid-guide/remote-server-access/cloudflare-tunnel/creating-a-tunnel.md): ●
+- [Giving Access](https://unraidguide.github.io/unraid-guide/remote-server-access/cloudflare-tunnel/giving-access.md): ●
+
+### Authelia
+
+- [About Authelia](https://unraidguide.github.io/unraid-guide/remote-server-access/authelia/what-authelia.md): Authelia is known as a SSO (Single Sign-On). It isn't necessary to set up right away, but it's the next step in security if you're accessing your apps remotely via port forwarding or cloudflare tunnel.
+- [Setup](https://unraidguide.github.io/unraid-guide/remote-server-access/authelia/authelia-setup.md): Accompanying video by AlienTech42
+- [OIDC Setup*](https://unraidguide.github.io/unraid-guide/remote-server-access/authelia/oidc.md): Only set this up, if you are planning to add a client right after. Since if you set this up and don't have an app to use it, Authelia won't start. This set up only has to be done once.
+
+## App Installations
+
+### Media Server
+
+- [About Plex & Jellyfin](https://unraidguide.github.io/unraid-guide/app-installations/media-server/plexvsjellyfin.md): When you’re streaming a video on a media server and you need to change the quality settings (due to poor internet or device limitations), that process is called transcoding.
+
+#### Plex
+
+- [Installation](https://unraidguide.github.io/unraid-guide/app-installations/media-server/plex/installation.md): Install Plex using the template by hotio. We will use this template because it uses the Bridge network instead of Host, making it more secure. It does require a few extra settings to be filled out.
+- [Tips](https://unraidguide.github.io/unraid-guide/app-installations/media-server/plex/plex-tips.md): I recommend using the app instead of the website. The web version often transcodes the media, and sometimes makes subtitles look weird, especially for anime.
+
+#### Jellyfin
+
+- [Installation](https://unraidguide.github.io/unraid-guide/app-installations/media-server/jellyfin/install.md): Install Jellyfin using the template by hotio.
+- [Tips](https://unraidguide.github.io/unraid-guide/app-installations/media-server/jellyfin/jellyfin1.md): (As of June 2026)
+
+### File Sharing
+
+- [Nextcloud](https://unraidguide.github.io/unraid-guide/app-installations/file-sharing/nextcloud.md): Nextcloud is a Google Drive replacement where you can share files, sync documents, and a lot more. You can also install apps within Nextcloud that offer more functionalities.
+- [Installation](https://unraidguide.github.io/unraid-guide/app-installations/file-sharing/installation.md): Accompanying video by Spaceinavder
+- [Using Tailscale Instead](https://unraidguide.github.io/unraid-guide/app-installations/file-sharing/using-tailscale-instead.md): Accompanying video by Spaceinavder
+- [Post Installation Setup](https://unraidguide.github.io/unraid-guide/app-installations/file-sharing/post-installation-setup.md): First thing you probably said was "maan, this added like a gazillion containers on the Docker tab making it all ugly." Luckily for you theres a plugin called folderview3.
+- [External Storage](https://unraidguide.github.io/unraid-guide/app-installations/file-sharing/external-storage.md): External Storage allows you to connect a share to Nextcloud. This is useful when you want to share files that is already in one of your shares, rather than having to copy and paste it into Nextcloud, and then sharing.
+- [Authelia Setup](https://unraidguide.github.io/unraid-guide/app-installations/file-sharing/authelia-nextcloud.md): Set up OIDC for Authelia if you havent already.
+
+### Mobile Photo Backup
+
+- [About Immich](https://unraidguide.github.io/unraid-guide/app-installations/mobile-photo-backup/0-immich.md): Immich is pretty much the go to service for "backup my photos from my phone to my server". Some features include; having multiple users, creating shareable links, and having shared albums.
+- [Installation](https://unraidguide.github.io/unraid-guide/app-installations/mobile-photo-backup/5-installation.md): Immich's guide for Unraid
+- [Post Installation Setup](https://unraidguide.github.io/unraid-guide/app-installations/mobile-photo-backup/10-post-installation-setup.md): If you're using a domain you purchased, enter your server URL with https, even though that's not what you put in NPM. If you're using a Tailscale address (e.g.
+- [External Storage (Optional)](https://unraidguide.github.io/unraid-guide/app-installations/mobile-photo-backup/15-external-path.md): You can add external libraries to Immich. I use this to add my childhood photos and videos. The one downside is that only one person can view it. So if another person wants to view those photos and videos too, you have to create another external library for the same photos and videos.
+- [Immich Public Proxy (Optional)](https://unraidguide.github.io/unraid-guide/app-installations/mobile-photo-backup/immich-public-proxy.md): Have you ever wished to be able to share photos to your friends and family without needing to expose all of Immich? Look no further, Immich Public Proxy is here!
+
+### Backup
+
+- [Appdata Backup](https://unraidguide.github.io/unraid-guide/app-installations/backup/appdata-backup.md): Accompanying video by AlienTech42
+
+#### Backup (Online Storage)
+
+- [About Backup](https://unraidguide.github.io/unraid-guide/app-installations/backup/backup-online/about-backup.md): You're probably thinking you should look into backing up yor stuff pressured by others yelling 3-2-1 strategy or from fear that your house might burn down and you'll lose all your stuff.
+- [Installation](https://unraidguide.github.io/unraid-guide/app-installations/backup/backup-online/backup-to-online-storage.md): Create a free B2 Cloud Storage account on Backblaze.
+- [Restore Backup](https://unraidguide.github.io/unraid-guide/app-installations/backup/backup-online/restore-backup.md): so you could go onto the webui and download the old files from there if you need. but lets setup if you cant access yourserver, how to retrieve your files
+
+### TRaSH
+
+- [About TRaSH](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy-copy-(2).md): Coming soon (?)
+- [radarr](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy.md)
+- [sonarr](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy-copy.md)
+- [prowlarr](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy-copy-(3).md)
+- [qbittorrent](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy-copy-(4).md)
+- [qbitmanage](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy-copy-(5).md): when you upgrade a movie, radarr doesnt fully delete the old version, this is where qbitmanage comes in. because it only delete 1 of the copies so the other one becomes unhardlinked which is in the torrents folder.
+- [cross-seed](https://unraidguide.github.io/unraid-guide/app-installations/trash/newmd1-copy-copy-(6).md): this is so the stuff you download from usenet will also be searched with torrent trackers:
+- [Randompage](https://unraidguide.github.io/unraid-guide/app-installations/randompage.md): make a trouble shoot section and add docker image size and

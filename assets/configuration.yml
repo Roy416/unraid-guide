@@ -1,0 +1,105 @@
+# =========================
+# Authelia Configuration
+# =========================
+
+server:
+  # DON'T CHANGE
+  address: tcp://0.0.0.0:9091
+
+log:
+  level: info
+
+# Options: light, dark, auto
+theme: auto
+
+authentication_backend:
+  file:
+    # This points to your user database file
+    path: /config/users_database.yml
+
+access_control:
+  # Default rule if nothing else matches
+  default_policy: deny  # If nothing matches → block access completely
+
+  # IMPORTANT: Rules are processed top → bottom.
+  # More specific rules must come before wildcard rules.
+  rules:
+    # Policy is bypass for Authelia site, otherwise it'll be stuck in a loop
+    - domain: "auth.YOUR_DOMAIN.com"  # CHANGE THIS (Keep it in " ")
+      policy: bypass
+      
+    # 2FA Login
+    - domain:
+        - "*.YOUR_DOMAIN.com"        # CHANGE THIS (Keep it in " ")
+      policy: two_factor
+ 
+    # Only Authelia Login
+    - domain: 
+        - "*.tailname1-tailname2.ts.net"     # CHANGE THIS (Keep it in " ")
+      policy: one_factor
+
+session:
+  # Generate with: openssl rand -base64 32
+  secret: "REPLACE_WITH_RANDOM_STRING"  # CHANGE THIS (Keep it in " ")
+  
+  expiration: 3600       # 1 hour
+  inactivity: 300        # 5 minutes idle timeout
+
+  cookies:
+    - name: authelia_session
+
+      # Root domain ONLY (no subdomain)
+      domain: YOUR_DOMAIN.com                             # CHANGE THIS
+
+      # Your Authelia login portal
+      authelia_url: https://auth.YOUR_DOMAIN.com          # CHANGE THIS
+
+      # Where users go after login
+      default_redirection_url: https://YOUR_DOMAIN.com    # CHANGE THIS
+
+storage:
+  # Generate with: openssl rand -base64 32
+  encryption_key: "REPLACE_WITH_RANDOM_STRING"  # CHANGE THIS (Keep it in " ")
+  
+  local:
+    # SQLite database location
+    path: /config/db.sqlite3
+
+notifier:
+  # DEV MODE: writes notifications to a file instead of email
+  filesystem:
+    filename: /config/notification.txt
+
+# SMTP MODE - Optionally use email for notifications and password resets
+# If using this section be sure to adjust the settings to match your email provider settings
+# Uncomment below and comment out the filesystem notifier above
+# notifier:
+#   smtp:
+#     address: smtp.gmail.com:587
+#     username: your@email.com
+#     password: app_password
+#     sender: "Authelia <your@email.com>"
+
+identity_validation:
+  reset_password:
+    # REQUIRED in newer Authelia versions
+    # Generate with: openssl rand -base64 32
+    jwt_secret: "REPLACE_WITH_RANDOM_STRING"  # CHANGE THIS (Keep it in " ")
+
+#identity_providers:
+  #oidc:
+    #hmac_secret: 'this_is_a_secret_abc123abc123abc'
+    #jwks:
+      #- key: |
+          #-----BEGIN PRIVATE KEY-----
+          #...
+          #-----END PRIVATE KEY-----
+    #enforce_pkce: 'always' 
+    
+    #clients:
+      #- client_id: 'nextcloud'                    # setup for nextcloud
+        #client_secret: '$pbkdf2-sha512$...'      # the digest
+        #redirect_uris:
+          #- 'https://nextcloud.YOUR_DOMAIN.com/apps/user_oidc/code'
+        #token_endpoint_auth_method: 'client_secret_post'
+ 
